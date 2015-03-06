@@ -121,5 +121,44 @@ class Slide
     
     self.new(result)
   end
-    
+  
+  # Public: to_hash
+  # 
+  # Returns a hash of the object
+  #
+  # Parameters:
+  # None
+  #
+  # Returns:
+  # A hash
+  #
+  # State Changes:
+  # None  
+  
+  def to_hash
+    {
+      id: id,
+      title: title,
+      slide_text: slide_text,
+      slide_order: slide_order      
+    }
+  end
+  
+  # Public: self.all
+  # 
+  # Returns an array of hashes of all the records
+  #
+  # Parameters:
+  # None
+  #
+  # Returns:
+  # Array of hashes of all the records
+  #
+  # State Changes:
+  # None  
+  
+  def self.all
+    result = DATABASE.execute("SELECT * FROM slides")
+  end
+  
 end
