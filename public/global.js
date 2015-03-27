@@ -28,7 +28,6 @@ var sendRequest = function(request) {
 
 var singleSlide = function(eventObject){
   var object = JSON.parse(this.response);
-  document.getElementById("title").innerHTML = object.title;
   document.getElementById("text").innerHTML = object.slide_text; 
 } 
 
