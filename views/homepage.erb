@@ -1,8 +1,11 @@
 <div class="slidebox">
   <p id="text">Text goes here</p>
-
-
-
-  <div class="slidebuttons"><a href="javascript:void(0)" onclick="backButton(<%= @slides %>)"><button class="button" id="backbutton">Back button goes here</button></a> 
-  <a href="javascript:void(0)" onclick="forwardButton(<%= @slides %>)"><button class="button" id="forwardbutton">Forward button goes here</button></a></div>
-  </div>
+  
+    <div class="slidebuttons">
+      <a href="javascript:void(0)" onclick="backButton(<%= @slides %>)">
+        <button class="button" id="backbutton"><< PREVIOUS</button></a> 
+      |
+      <a href="javascript:void(0)" onclick="forwardButton(<%= @slides %>)">
+        <button class="button" id="forwardbutton">NEXT >></button></a>
+    </div>
+</div>

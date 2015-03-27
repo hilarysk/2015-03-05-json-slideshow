@@ -1,44 +1,152 @@
-/*
-
-NEED TO ADD A WRAPPER SO THAT SLIDEBOX IS 25% OF SCREEN HEIGHT
-
-*/
-
-.slidebox {
-  position: relative;
-  width: 39%;
-  height: 25%;
-  color: #000;
-  left: 20%;
-  margin-top: 7%;
+.button {
+  border: 0px;
+  font-family: 'Fascinate', cursive;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(0,0,0,0.8);
+  background-color: transparent;
+  height: 21px;
 }
 
-body {
-  background-image: url("/theater_cropped.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: #000;
-  height: 100%;
-}
-
-
-#text {
-  
-  
-}
-
-.slidebuttons {
-  position:absolute;
-  bottom:0;  
-}
-
-.button:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
-	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
-	background-color:#ce0100;
-}.button:active {
+.button:active {
 	position:relative;
 	top:1px;
+  color: transparent;
 }
-/* This button was generated using CSSButtonGenerator.com */
+.button:focus {
+  outline:0;
+}
+
+.button:visited {
+  color: transparent;
+}
+
+#backbutton {
+  padding-right: 15px;
+}
+
+#forwardbutton {
+  padding-left: 15px;
+}
+
+#text {
+  font-family: 'Fascinate', cursive;
+  font-size: 24px;
+}
+
+
+
+/* iphone6 display*/
+@media screen and (max-width: 667px) {
+
+  body {
+    background-image: url("/theater_cropped.jpg");
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+
+  .slidebox {
+    position: relative;
+    width: 384px;
+    color: rgba(0,0,0,0.8);
+    left: 25px;
+    margin-top: 63px;
+    height: 164px;
+  }
+
+  .slidebuttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;  
+  }
+
+}
+
+/* tablet-ish*/
+@media screen and (min-width: 667px) and (max-width:847px){
+  body {
+    background-image: url("/theater_cropped_tablet.jpg");
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+
+  .slidebox {
+    position: relative;
+    width: 372px;
+    color: rgba(0,0,0,0.8);
+    left: 76px;
+    margin-top: 63px;
+    height: 153px;
+  }
+
+  .slidebuttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;  
+  }
+
+}
+                                                    
+/* standard monitor */                                                                                                                                                            
+@media screen and (min-width: 847px) and (max-width: 1400px){
+  body {
+    background-image: url("/theater_cropped_standard.jpg");
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+
+  .slidebox {
+    position: relative;
+    width: 408px;
+    color: rgba(0,0,0,0.8);
+    left: 192px;
+    margin-top: 65px;
+    height: 166px;
+  }
+
+  .slidebuttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;  
+  }
+  
+  #text {
+    font-family: 'Fascinate', cursive;
+    font-size: 27px;
+  }
+  
+}
+
+/* superhuge monitor*/
+@media screen and (min-width: 1400px) {
+  body {
+    background-image: url("/theater.jpg");
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-position: center top;
+  }
+
+  .slidebox {
+    position: relative;
+    width: 504px;
+    color: rgba(0,0,0,0.8);
+    left: 22%;
+    margin-top: 97px;
+    height: 207px;
+  }
+
+  .slidebuttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;  
+  }
+  
+  #text {
+    font-family: 'Fascinate', cursive;
+    font-size: 31px;
+  }
+}
+  
+
+  
+
