@@ -1,14 +1,30 @@
-// functions
+// document.getElementById('youridhere').scrollIntoView(); --> have scroll up on typewriter for daily fem or here?
+
+//<a href="https://www.flickr.com/photos/picsfromj/3452211626" title="drive-in by Joyce Pedersen, on Flickr"><img src="https://farm4.staticflickr.com/3352/3452211626_2586e54aef_s.jpg" width="75" height="75" alt="drive-in"></a>
+
+
+
+
+
+
+
 var currentSlide = 1
 
-//load first slide when page is refreshed
+// Load first slide when page is refreshed
 
 window.onload = function(){
   var req = new XMLHttpRequest;
   sendRequest(req);
 }
 
-//format slide
+// Get slide information
+
+var sendRequest = function(request) {
+  request.open("post", "http://localhost:4567/slide/" + currentSlide);
+  request.send();
+  request.addEventListener("load", singleSlide);
+}
+// Format slide
 
 var singleSlide = function(eventObject){
   var object = JSON.parse(this.response);
@@ -16,9 +32,7 @@ var singleSlide = function(eventObject){
   document.getElementById("text").innerHTML = object.slide_text; 
 } 
 
-
-//for each onclick, load the next slide in numerical order
-//Next
+// Next button
 
 function forwardButton(numSlides) {
   currentSlide++
@@ -30,7 +44,7 @@ function forwardButton(numSlides) {
   sendRequest(request);
 }
 
-//Back
+// Back button
 
 function backButton(numSlides) {
   currentSlide--
@@ -42,10 +56,3 @@ function backButton(numSlides) {
   sendRequest(request);
 }
 
-// request function
-
-var sendRequest = function(request) {
-  request.open("post", "http://localhost:4567/slide/" + currentSlide);
-  request.send();
-  request.addEventListener("load", singleSlide);
-}
